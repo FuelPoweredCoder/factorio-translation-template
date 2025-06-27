@@ -1,0 +1,38 @@
+# Factorio Translation MOD Template Configuration
+
+_templates_suffix: .jinja
+_subdirectory: template
+
+# 実行後メッセージ
+_message_after_copy: |
+  ✅ 翻訳MOD "{{ mod_name }}" が作成されました！
+  
+  📁 次のステップ:
+     1. 元MOD {{ original_mod_name }} のlocale/en/を参考用に配置  
+     2. locale/ja/で翻訳作業
+     3. thumbnail.png (288×288px推奨) を追加
+
+
+# 元MOD名
+original_mod_name:
+  type: str
+  help: "翻訳対象の元MOD名"
+  placeholder: "logistics-train-network"
+  validator: >-
+    {% if not original_mod_name %}
+    元MOD名は必須です
+    {% elif ' ' in original_mod_name %}
+    MOD名にスペースを含めることはできません
+    {% endif %}
+
+# MOD名（自動生成、隠し項目）
+mod_name:
+  type: str
+  default: "ja-translation-{{ original_mod_name }}"
+  when: false
+
+# 作者名
+author_name:
+  type: str
+  help: "作者名"
+  default: "Your Name"
