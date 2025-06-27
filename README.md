@@ -9,7 +9,7 @@ Factorio MODの日本語翻訳プロジェクト用Copierテンプレート
 pip install copier
 
 # テンプレートを使用して新しい翻訳MODを作成
-copier copy gh:yourname/factorio-translation-template .
+copier copy gh:FuelPoweredCoder/factorio-translation-template .
 ```
 
 ## ✨ 特徴
